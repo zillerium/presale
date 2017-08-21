@@ -296,7 +296,7 @@ contract ProofPresale is Pausable {
    */
   function buyTokens(address beneficiary) payable whenNotPaused {
     require(beneficiary != 0x0);
-    require(validPurchase());
+    // require(validPurchase());
 
 
     uint256 weiAmount = msg.value;

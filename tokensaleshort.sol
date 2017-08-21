@@ -273,7 +273,7 @@ contract ProofPresale is Pausable {
   function ProofPresale() {
 
     token = createTokenContract();
-    wallet = 0x99892Ac6DA1b3851167Cb959fE945926bca89f09;
+    wallet = 0x898091cB76927EE5B41a731EE15dDFdd0560a67b;
     rate = 20;
     minInvestment = 10 * (10**18);  //minimum investment in wei  (=10 ether)
     cap = 295257 * (10**18);  //cap in token base units (=295257 tokens)

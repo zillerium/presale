@@ -232,6 +232,10 @@ contract ZilleriumPresaleToken is ERC20, Ownable {
     return true;
   }
 
+  function allowMinting() onlyOwner returns (bool) {
+    mintingFinished = false;
+    return true;
+  }
 
 }
 
@@ -252,7 +256,7 @@ contract ZilleriumPresale is Pausable {
   address public wallet; //wallet towards which the funds are forwarded
   uint256 public weiRaised; //total amount of ether raised
   uint256 public cap; // cap above which the presale ends
-  uint256 public minInvestment; // minimum investment 
+  uint256 public minInvestment; // minimum investment
   uint256 public rate; // number of tokens for one ether
   bool public isFinalized;
   string public contactInformation;

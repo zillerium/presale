@@ -140,7 +140,7 @@ contract ERC20 {
 }
 
 /**
- * @title ZilleriumPresaleToken (PROOFP)
+ * @title ZilleriumPresaleToken (ZILL)
  * Standard Mintable ERC20 Token
  * https://github.com/ethereum/EIPs/issues/20
  * Based on code by FirstBlood:
@@ -155,7 +155,7 @@ contract ZilleriumPresaleToken is ERC20, Ownable {
   mapping (address => mapping (address => uint)) allowed;
 
   string public constant name = "Zillerium Presale Token";
-  string public constant symbol = "PPT";
+  string public constant symbol = "ZILL";
   uint8 public constant decimals = 18;
   bool public mintingFinished = false;
 

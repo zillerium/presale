@@ -252,8 +252,8 @@ contract ZilleriumPresale is Pausable {
   address public wallet; //wallet towards which the funds are forwarded
   uint256 public weiRaised; //total amount of ether raised
   uint256 public cap; // cap above which the presale ends
-  uint256 public minInvestment; // minimum investment (10 ether)
-  uint256 public rate; // number of tokens for one ether (20)
+  uint256 public minInvestment; // minimum investment 
+  uint256 public rate; // number of tokens for one ether
   bool public isFinalized;
   string public contactInformation;
 
@@ -277,9 +277,9 @@ contract ZilleriumPresale is Pausable {
 
     token = createTokenContract();
     wallet = 0x898091cB76927EE5B41a731EE15dDFdd0560a67b;
-    rate = 20;
-    minInvestment = 10 * (10**18);  //minimum investment in wei  (=10 ether)
-    cap = 295257 * (10**18);  //cap in token base units (=295257 tokens)
+    rate = 100;
+    minInvestment = 1 * (10**16);  //minimum investment in wei  (=.01 ether, this is based on wei being 10 to 18)
+    cap = 16600 * (10**18);  //cap in token base units (=295257 tokens)
 
   }
 
@@ -299,7 +299,7 @@ contract ZilleriumPresale is Pausable {
    */
   function buyTokens(address beneficiary) payable whenNotPaused {
     require(beneficiary != 0x0);
-    // require(validPurchase());
+    require(validPurchase());
 
 
     uint256 weiAmount = msg.value;

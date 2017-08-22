@@ -1,5 +1,8 @@
 pragma solidity ^0.4.11;
 
+// This code was taken from https://etherscan.io/address/0x3931E02C9AcB4f68D7617F19617A20acD3642607#code
+// This was a presale from ProofSuite.com
+// This was based on https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol from what I saw
 
 /**
  * @title SafeMath
@@ -137,21 +140,21 @@ contract ERC20 {
 }
 
 /**
- * @title ProofPresaleToken (PROOFP)
+ * @title ZilleriumPresaleToken (PROOFP)
  * Standard Mintable ERC20 Token
  * https://github.com/ethereum/EIPs/issues/20
  * Based on code by FirstBlood:
  * https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
 
-contract ProofPresaleToken is ERC20, Ownable {
+contract ZilleriumPresaleToken is ERC20, Ownable {
 
   using SafeMath for uint256;
 
   mapping(address => uint) balances;
   mapping (address => mapping (address => uint)) allowed;
 
-  string public constant name = "Proof Presale Token";
+  string public constant name = "Zillerium Presale Token";
   string public constant symbol = "PPT";
   uint8 public constant decimals = 18;
   bool public mintingFinished = false;
@@ -159,7 +162,7 @@ contract ProofPresaleToken is ERC20, Ownable {
   event Mint(address indexed to, uint256 amount);
   event MintFinished();
 
-  function ProofPresaleToken() {}
+  function ZilleriumPresaleToken() {}
 
 
   function() payable {
@@ -233,17 +236,17 @@ contract ProofPresaleToken is ERC20, Ownable {
 }
 
 /**
- * @title ProofPresale
- * ProofPresale allows investors to make
+ * @title ZilleriumPresale
+ * ZilleriumPresale allows investors to make
  * token purchases and assigns them tokens based
  * on a token per ETH rate. Funds collected are forwarded to a wallet
  * as they arrive.
  */
 
-contract ProofPresale is Pausable {
+contract ZilleriumPresale is Pausable {
   using SafeMath for uint256;
 
-  ProofPresaleToken public token;
+  ZilleriumPresaleToken public token;
 
 
   address public wallet; //wallet towards which the funds are forwarded
@@ -270,7 +273,7 @@ contract ProofPresale is Pausable {
   event Finalized();
 
 
-  function ProofPresale() {
+  function ZilleriumPresale() {
 
     token = createTokenContract();
     wallet = 0x898091cB76927EE5B41a731EE15dDFdd0560a67b;
@@ -281,8 +284,8 @@ contract ProofPresale is Pausable {
   }
 
   // creates presale token
-  function createTokenContract() internal returns (ProofPresaleToken) {
-    return new ProofPresaleToken();
+  function createTokenContract() internal returns (ZilleriumPresaleToken) {
+    return new ZilleriumPresaleToken();
   }
 
   // fallback function to buy tokens

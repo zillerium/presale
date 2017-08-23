@@ -281,7 +281,8 @@ contract ZilleriumPresale is Pausable {
   function ZilleriumPresale() {
 
     token = createTokenContract();
-    wallet = 0x898091cB76927EE5B41a731EE15dDFdd0560a67b;
+    wallet = 0x898091cB76927EE5B41a731EE15dDFdd0560a67b; // live
+    //  wallet = 0x48884f1f259a4fdbb22b77b56bfd486fe7784304; // testing
     rate = 100;
     minInvestment = 1 * (10**16);  //minimum investment in wei  (=.01 ether, this is based on wei being 10 to 18)
     cap = 16600 * (10**18);  //cap in token base units (=295257 tokens)
